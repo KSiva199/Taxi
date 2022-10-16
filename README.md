@@ -504,11 +504,9 @@ print(n,nn)
 fnew.close
 
 ```
-Output: 14385457 14386
+Output: ![This is an image](output10.png)
 
-![This is an image](output10.png)
-
-
+14385457 14386
 
 
 #Part 11
@@ -562,7 +560,7 @@ plt.show()
 
 ```
 
-![This is an image](output11.png)
+![This is an image](output1.png)
 
 
 
