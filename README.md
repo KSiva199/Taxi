@@ -84,7 +84,7 @@ Output:
 
 #Part4
 
-
+```
 import csv
 f = open("/Users/ksr/Downloads/trip_data_1.csv", 'r')
 reader = csv.reader(f)
@@ -101,6 +101,8 @@ for row in reader:
   n+=1
   if n==5:
     break
+
+```
 medallion|hack_license|vendor_id|rate_code|store_and_fwd_flag|pickup_datetime|dropoff_datetime|passenger_count|trip_time_in_secs|trip_distance|pickup_longitude|pickup_latitude|dropoff_longitude|dropoff_latitude
 ---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|
 89D227B655E5C82AECF13C3F540D4CF4|BA96DE419E711691B9445D6A6307C170|CMT|1|N|2013-01-01 15:11:48|2013-01-01 15:18:10|4|382|1.00|-73.978165|40.757977|-73.989838|40.751171
@@ -109,9 +111,10 @@ medallion|hack_license|vendor_id|rate_code|store_and_fwd_flag|pickup_datetime|dr
 DFD2202EE08F7A8DC9A57B02ACB81FE2|51EE87E3205C985EF8431D850C786310|CMT|1|N|2013-01-07 23:54:15|2013-01-07 23:58:20|2|244|.70|-73.974602|40.759945|-73.984734|40.759388
 
 
-In [5]:
-#5
 
+#Part5
+
+```
 import csv, folium
 f = open("/Users/ksr/Downloads/trip_data_1.csv", 'r')
 reader = csv.reader(f)
@@ -144,13 +147,11 @@ for row in reader:
 
 
 print(ex, maxlong,minilong, maxlat,minilat)
+
+```
+
+Output:
 87 2228.7375 -2771.2854 3477.1055 -3547.9207
-In [ ]:
-import folium
-map=folium.Map(location=[maxlat,minilong])
-map1=folium.Map(location=[minilat,maxlong])
-map.add_child(folium.Marker(location=[maxlat,minilong],popup="MaxLat", icon=folium.Icon(color='red')))
-map1.add_child(folium.Marker(location=[minilat,maxlong],popup="MaxLat", icon=folium.Icon(color='green')))
 
 
 ![This is an image](Img.png)
