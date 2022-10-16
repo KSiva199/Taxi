@@ -103,6 +103,8 @@ for row in reader:
     break
 
 ```
+Output:
+
 medallion|hack_license|vendor_id|rate_code|store_and_fwd_flag|pickup_datetime|dropoff_datetime|passenger_count|trip_time_in_secs|trip_distance|pickup_longitude|pickup_latitude|dropoff_longitude|dropoff_latitude
 ---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|
 89D227B655E5C82AECF13C3F540D4CF4|BA96DE419E711691B9445D6A6307C170|CMT|1|N|2013-01-01 15:11:48|2013-01-01 15:18:10|4|382|1.00|-73.978165|40.757977|-73.989838|40.751171
@@ -161,6 +163,7 @@ Output:
 
 #6
 
+```
 import csv
 from math import radians, cos, sin, asin, sqrt
 f = open("/Users/ksr/Downloads/trip_data_1.csv", 'r')
@@ -197,7 +200,10 @@ for row in reader:
     ex +=1
 
 print("Average Haversine Distance =", z/(n-ex) )
-    
+
+```
+
+Output:    
        
 Average Haversine Distance = 19.597999536473484
 
@@ -205,6 +211,8 @@ Average Haversine Distance = 19.597999536473484
 
 
 #Part6A
+
+```
 
 print(x[:5])
 
@@ -224,9 +232,17 @@ ax.hist(x, bins = [0,2500, 5000,7500,10000,12500])
  
 
 plt.show()
-[1.240760594407495, 3.577535155709607, 4.955543943134076, 5.8111576389775506, 8.03090697280956]
-/var/folders/z8/46_440p905v1pzk4x5tn867h0000gn/T/ipykernel_5247/2249430758.py:6: MatplotlibDeprecationWarning: The seaborn styles shipped by Matplotlib are deprecated since 3.6, as they no longer correspond to the styles shipped by seaborn. However, they will remain available as 'seaborn-v0_8-<style>'. Alternatively, directly use the seaborn API instead.
+Output of plots: [1.240760594407495, 3.577535155709607, 4.955543943134076, 5.8111576389775506, 8.03090697280956]
+
   plt.style.use('seaborn')
+
+```
+
+Output:
+
+![This is an image](output6a.png)
+![This is an image](output6a2.png)
+
 
 
 
@@ -234,7 +250,7 @@ plt.show()
 
 
 #Part7
-
+```
 from math import radians, cos, sin, asin, sqrt
 import csv
 
@@ -324,9 +340,12 @@ for row in reader:
     dlat_13[row[13]]=1
 
 print(len(td_9),len(plong_10),len(plat_11),len(dlong_12),len(dlat_13))
-4369 40443 64512 56251 88768
-In [4]:
 print(rc)
+
+```
+Output:
+
+4369 40443 64512 56251 88768
 {'rate_code': 1, '1': 14456067, '2': 239160, '4': 22831, '5': 39889, '3': 17655, '6': 315, '8': 10, '0': 667, '210': 11, '28': 2, '7': 2, '9': 1, '65': 1, '128': 4}
 
 
@@ -337,7 +356,8 @@ print(rc)
 #Part8
 
 
-``` import csv
+``` 
+import csv
 f = open("/Users/ksr/Downloads/trip_data_1.csv", 'r')
 reader = csv.reader(f)
 
@@ -383,7 +403,9 @@ for row in reader:
     print(e)
 
 
-print(n) ```
+print(n) 
+
+```
 
 invalid literal for int() with base 10: 'rate_code'
 invalid literal for int() with base 10: 'passenger_count'
@@ -401,7 +423,7 @@ print(max_td, min_td)
 1.0 0.5
 
 #Part9
-
+```
 
 import datetime,csv
 #import csv
@@ -451,33 +473,95 @@ plt.title('Average number of taxi passengers for each hour of the day')
 plt.bar(x=range(0,24), height=averages)
 plt.show()
 
+```
+Output:
+
+![This is an image](output9.png)
+
+
+#Part 10
+
+```
+
+import csv
+fn = 'trip_data_6.csv'
+f = open(fn, 'r')
+reader = csv.reader(f)
+fnew = open('new.csv', 'w')
+fnew.write('')
+fnew.close()
+fnew = open('new.csv', 'w')
+writer = csv.writer(fnew,delimiter=',',lineterminator='\n')
+
+n = 0
+nn=0
+for row in reader:
+    if n % 1000 == 0:
+        nn+=1
+        writer.writerow(row)
+    n+=1
+print(n,nn)
+fnew.close
+
+```
+Output: 14385457 14386
+![This is an image](output10.png)
+
+
 
 
 #Part 11
 
+```
+
 import datetime,csv
-ml = ['12','10']
 
 fn = "/Users/ksr/Downloads/trip_data_1.csv"
 f = open(fn,'r')
 reader = csv.reader(f)
+exp =0
+n=0
+pcl =  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+hc =  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
-f2 = open('oct_dec_subset.csv','w')
-f2.write('')
-f2.close()
+#f = open(fn, 'r')
+#reader = csv.reader(f)
+for row in reader:
+  n+=1
+  try:
+    dts = row[5]
+    dto = datetime.datetime.strptime(dts,"%Y-%m-%d %H:%M:%S")
+  except Exception as e:
+    exp+=1
+    print(e)
+  h = dto.hour  
+  try:
+    ipc = int(row[7])    
+    hc[h]+=1
+    pcl[h]+=ipc
+  except Exception as e:
+    print(e)
 
-f2 = open('oct_dec_subset.csv','a')
-writer = csv.writer(f2,delimiter=',',lineterminator='\n')
-for i, row in enumerate(reader):
-    if i > 0:
-        dt = row[4].split('/')
-        ms = dt[0]
-        if ms in ml:
-            writer.writerow(row)
-    else:
-        writer.writerow(row)
-f.close()
-f2.close()
+averages = []
+
+for i in range(len(hc)):
+  averages.append(pcl[i] / hc[i])
+
+from matplotlib import pyplot as plt
+plt.style.use('seaborn')
+import numpy as np
+ 
+# Creating histogram
+plt.figure(figsize=(20,6))
+plt.xlabel('Hour of the day')
+plt.ylabel('Average number of taxi passengers')
+plt.title('Average number of taxi passengers for each hour of the day')
+plt.bar(x=range(0,24), height=averages)
+plt.show()
+
+```
+
+![This is an image](output11.png)
 
 
 
