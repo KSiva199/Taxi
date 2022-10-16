@@ -504,7 +504,7 @@ print(n,nn)
 fnew.close
 
 ```
-Output: ![This is an image](output10.png)
+Output: ![This is an image](output10)
 
 14385457 14386
 
