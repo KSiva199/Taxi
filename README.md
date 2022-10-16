@@ -1,5 +1,5 @@
 
-#1
+#Part1
 
 ``` 
 import datetime, csv
@@ -30,8 +30,9 @@ Output: 87 2228.7375 -2771.2854
 
 
 
-#2
+#Part2
 
+```
 import csv
 file=open("/Users/ksr/Downloads/trip_data_1.csv",'r')
 reader=csv.reader(file)
@@ -40,14 +41,18 @@ reader=csv.reader(file)
 for row in reader:
     print(row)
     break
-['medallion', 'hack_license', 'vendor_id', 'rate_code', 'store_and_fwd_flag', 'pickup_datetime', 'dropoff_datetime', 'passenger_count', 'trip_time_in_secs', 'trip_distance', 'pickup_longitude', 'pickup_latitude', 'dropoff_longitude', 'dropoff_latitude']
+```    
+
+Output: ['medallion', 'hack_license', 'vendor_id', 'rate_code', 'store_and_fwd_flag', 'pickup_datetime', 'dropoff_datetime', 'passenger_count', 'trip_time_in_secs', 'trip_distance', 'pickup_longitude', 'pickup_latitude', 'dropoff_longitude', 'dropoff_latitude']
 
 
 
 
 
 
-#3
+#Part3
+
+```
 import csv
 file=open("/Users/ksr/Downloads/trip_data_1.csv",'r')
 reader=csv.reader(file)
@@ -59,7 +64,10 @@ for row in reader:
     if n>5:
         break
         
-       
+```
+
+Output:
+
 ['medallion', 'hack_license', 'vendor_id', 'rate_code', 'store_and_fwd_flag', 'pickup_datetime', 'dropoff_datetime', 'passenger_count', 'trip_time_in_secs', 'trip_distance', 'pickup_longitude', 'pickup_latitude', 'dropoff_longitude', 'dropoff_latitude']
 ['89D227B655E5C82AECF13C3F540D4CF4', 'BA96DE419E711691B9445D6A6307C170', 'CMT', '1', 'N', '2013-01-01 15:11:48', '2013-01-01 15:18:10', '4', '382', '1.00', '-73.978165', '40.757977', '-73.989838', '40.751171']
 ['0BD7C8F5BA12B88E0B67BED28BEA73D8', '9FD8F69F0804BDB5549F40E9DA1BE472', 'CMT', '1', 'N', '2013-01-06 00:18:35', '2013-01-06 00:22:54', '1', '259', '1.50', '-74.006683', '40.731781', '-73.994499', '40.75066']
