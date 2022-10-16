@@ -1,6 +1,7 @@
 
 #1
 
+``` 
 import datetime, csv
 file=open("/Users/ksr/Downloads/trip_data_1.csv",'r')
 reader=csv.reader(file)
@@ -23,6 +24,7 @@ for row in reader:
     n+=1
 print(minval,maxval)
 
+```
 Output: 87 2228.7375 -2771.2854
 
 
