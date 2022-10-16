@@ -326,7 +326,7 @@ print(rc)
 #Part8
 
 
-import csv
+``` import csv
 f = open("/Users/ksr/Downloads/trip_data_1.csv", 'r')
 reader = csv.reader(f)
 
@@ -372,7 +372,8 @@ for row in reader:
     print(e)
 
 
-print(n)
+print(n) ```
+
 invalid literal for int() with base 10: 'rate_code'
 invalid literal for int() with base 10: 'passenger_count'
 invalid literal for int() with base 10: 'trip_time_in_secs'
@@ -388,7 +389,56 @@ print(max_td, min_td)
 10800 48
 1.0 0.5
 
+#Part9
 
+
+import datetime,csv
+#import csv
+f = open("/Users/ksr/Downloads/trip_data_1.csv", 'r')
+reader = csv.reader(f)
+exp =0
+n=0
+pcl =  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+hc =  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+#f = open(fn, 'r')
+#reader = csv.reader(f)
+for row in reader:
+  n+=1
+  try:
+    dts = row[5]
+    dto = datetime.datetime.strptime(dts,"%Y-%m-%d %H:%M:%S")
+  except Exception as e:
+    exp+=1
+    print(e)
+  h = dto.hour  
+  try:
+    ipc = int(row[7])    
+    hc[h]+=1
+    pcl[h]+=ipc
+  except Exception as e:
+    print(e)
+
+        #except Exception as e:
+         # exp+=1
+          #print(e)
+
+          averages = []
+
+for i in range(len(hc)):
+  averages.append(pcl[i] / hc[i])
+
+  from matplotlib import pyplot as plt
+plt.style.use('seaborn')
+import numpy as np
+ 
+# Creating histogram
+plt.figure(figsize=(20,6))
+plt.xlabel('Hour of the day')
+plt.ylabel('Average number of taxi passengers')
+plt.title('Average number of taxi passengers for each hour of the day')
+plt.bar(x=range(0,24), height=averages)
+plt.show()
 
 
 
@@ -420,10 +470,4 @@ f2.close()
 
 
 
-
-
-
-
-
-![This is an image](Img.png)
 
