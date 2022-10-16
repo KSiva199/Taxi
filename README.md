@@ -1,5 +1,5 @@
 
-#Part1
+#Part 1
 
 ``` 
 import datetime, csv
@@ -30,7 +30,7 @@ Output: 87 2228.7375 -2771.2854
 
 
 
-#Part2
+#Part 2
 
 ```
 import csv
@@ -50,7 +50,7 @@ Output: ['medallion', 'hack_license', 'vendor_id', 'rate_code', 'store_and_fwd_f
 
 
 
-#Part3
+#Part 3
 
 ```
 import csv
@@ -82,7 +82,7 @@ Output:
 
 
 
-#Part4
+#Part 4
 
 ```
 import csv
@@ -114,7 +114,7 @@ DFD2202EE08F7A8DC9A57B02ACB81FE2|51EE87E3205C985EF8431D850C786310|CMT|1|N|2013-0
 
 
 
-#Part5
+#Part 5
 
 ```
 import csv, folium
@@ -161,7 +161,7 @@ Output:
 
 
 
-#6
+#Part 6
 
 ```
 import csv
@@ -210,7 +210,7 @@ Average Haversine Distance = 19.597999536473484
 
 
 
-#Part6A
+#Part 6A
 
 ```
 
@@ -249,7 +249,7 @@ Output:
 
 
 
-#Part7
+#Part 7
 ```
 from math import radians, cos, sin, asin, sqrt
 import csv
@@ -353,7 +353,7 @@ Output:
 
 
 
-#Part8
+#Part 8
 
 
 ``` 
@@ -422,7 +422,7 @@ print(max_td, min_td)
 10800 48
 1.0 0.5
 
-#Part9
+#Part 9
 ```
 
 import datetime,csv
