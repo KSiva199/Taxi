@@ -505,6 +505,7 @@ fnew.close
 
 ```
 Output: 14385457 14386
+
 ![This is an image](output10.png)
 
 
