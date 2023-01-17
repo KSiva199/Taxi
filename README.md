@@ -31,7 +31,7 @@ Output: 87 2228.7375 -2771.2854
 
 
 
-#Part 2
+## Field names
 
 ```
 import csv
@@ -51,7 +51,7 @@ Output: ['medallion', 'hack_license', 'vendor_id', 'rate_code', 'store_and_fwd_f
 
 
 
-#Part 3
+## Sample Data
 
 ```
 import csv
@@ -83,7 +83,7 @@ Output:
 
 
 
-#Part 4
+## MYSQL data types and Length
 
 ```
 import csv
@@ -107,7 +107,7 @@ for row in reader:
 Output:
 
 medallion|hack_license|vendor_id|rate_code|store_and_fwd_flag|pickup_datetime|dropoff_datetime|passenger_count|trip_time_in_secs|trip_distance|pickup_longitude|pickup_latitude|dropoff_longitude|dropoff_latitude
----------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|
+
 89D227B655E5C82AECF13C3F540D4CF4|BA96DE419E711691B9445D6A6307C170|CMT|1|N|2013-01-01 15:11:48|2013-01-01 15:18:10|4|382|1.00|-73.978165|40.757977|-73.989838|40.751171
 0BD7C8F5BA12B88E0B67BED28BEA73D8|9FD8F69F0804BDB5549F40E9DA1BE472|CMT|1|N|2013-01-06 00:18:35|2013-01-06 00:22:54|1|259|1.50|-74.006683|40.731781|-73.994499|40.75066
 0BD7C8F5BA12B88E0B67BED28BEA73D8|9FD8F69F0804BDB5549F40E9DA1BE472|CMT|1|N|2013-01-05 18:49:41|2013-01-05 18:54:23|1|282|1.10|-74.004707|40.73777|-74.009834|40.726002
@@ -115,7 +115,7 @@ DFD2202EE08F7A8DC9A57B02ACB81FE2|51EE87E3205C985EF8431D850C786310|CMT|1|N|2013-0
 
 
 
-#Part 5
+## Geographic Range
 
 ```
 import csv, folium
@@ -162,7 +162,7 @@ Output:
 
 
 
-#Part 6
+## Average Computed Trip Distance 
 
 ```
 import csv
@@ -211,7 +211,7 @@ Average Haversine Distance = 19.597999536473484
 
 
 
-#Part 6A
+## Data comparision by plotting Histogram
 
 ```
 
@@ -250,7 +250,7 @@ Output:
 
 
 
-#Part 7
+## distint values for each field 
 ```
 from math import radians, cos, sin, asin, sqrt
 import csv
@@ -354,7 +354,7 @@ Output:
 
 
 
-#Part 8
+## Numeric Types
 
 
 ``` 
@@ -423,7 +423,7 @@ print(max_td, min_td)
 10800 48
 1.0 0.5
 
-#Part 9
+## Chart which shows passengers each hour of a day
 ```
 
 import datetime,csv
@@ -480,7 +480,8 @@ Output:
 ![This is an image](output9.png)
 
 
-#Part 10
+##  A new CSV file which has only one out of every thousand rows.
+
 
 ```
 
@@ -510,7 +511,7 @@ Output: ![This is an image](output10.png)
 14385457 14386
 
 
-#Part 11
+## Comparison of data using two different charts
 
 ```
 
