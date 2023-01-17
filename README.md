@@ -511,7 +511,7 @@ Output: ![This is an image](output10.png)
 14385457 14386
 
 
-## Comparison of data using two different charts
+## Comparison of data in the previous charts and drawing a final chart on number of passanger on a each day
 
 ```
 
