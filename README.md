@@ -1,4 +1,4 @@
-# In this project i have analyzed a dataset which contains information about taxi rides in NYC.  The data set is quite large so getting a basic idea of what the data contains is important. 
+<h1 align='center'> In this project i have analyzed a dataset which contains information about taxi rides in NYC.  The data set is quite large so getting a basic idea of what the data contains is important. </h1>
 
 ## Datetime range does your data cover?  How many rows are there total
 
