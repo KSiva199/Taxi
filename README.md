@@ -162,7 +162,7 @@ Output:
 
 
 
-## Average Computed Trip Distance 
+## Average computed Trip distance 
 
 ```
 import csv
@@ -250,7 +250,7 @@ Output:
 
 
 
-## distint values for each field 
+## Distint values for each field 
 ```
 from math import radians, cos, sin, asin, sqrt
 import csv
